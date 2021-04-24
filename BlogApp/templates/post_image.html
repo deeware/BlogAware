@@ -1,0 +1,16 @@
+<!--image-->
+{% if Blog.image %}
+
+	
+	<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style="background-image:url('{{ Blog.image.url }}'); height: 75vh;"></div>
+
+{% else %}
+	{% load static %}
+
+
+
+
+
+	<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded imageanna" style="background-image:url('{% static url %}'); height: 75vh;"></div>
+
+{% endif %}

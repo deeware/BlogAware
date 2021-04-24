@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+
+{% if request.user.is_authenticated %}
+  <form action="{% url 'like' Blog.id %}" method="POST">
+    {% csrf_token %}
+
+    {% if Liked %}
+    <a class="link" data-tippy-content="Unlike">
+    <button type="submit" name="blogpost_id" value="{{Blog.id}}" class="mx-5 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out text-3xl ">💖</button></a>
+    {% else %}
+    <a class="link" data-tippy-content="Like">
+    <button type="submit" name="blogpost_id" value="{{Blog.id}}" class="mx-5 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out text-3xl ">🤍</button></a>
+    {% endif %}
+  </form>
+
+  
+{% else %}
+	<a class="link" href="{% url 'login' %}" data-tippy-content="Log in to like this Blog">
+    <button class="mx-5 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out text-l text-gray-800">Log in to LIKE</button>
+	</a>
+  
+{% endif %}
+
+
+<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@4"></script>
+	<script>
+		//Init tooltips
+		tippy('.link',{
+		  placement: 'bottom'
+		})
+	</script>

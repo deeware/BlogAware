@@ -1,0 +1,46 @@
+<div class="pt-24">
+      <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <!--Left Col-->
+        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left text-xl">
+          {% if request.user.is_authenticated %}
+          
+          <h1 class="my-4 text-5xl font-bold leading-tight">
+            Hi, <span class="uppercase">{{request.user.username }}</span>
+          </h1>
+          <p class=" tracking-loose w-full text-2xl font-bold " style="font-family: unset;"><i>...BE A VOICE NOT AN echo...</i></p><br>
+          <p class=" tracking-loose w-full">Keep writing Blogs</p><br>
+          <p class=" tracking-loose w-full">Your Blog Count : {{total}}</p><br>
+          <p class=" tracking-loose w-full">
+            {% if likes %}
+            Most Liked Blog : 
+          {{likes.title}}
+          {% else %}
+          No Blog yet
+          {% endif %}
+        </p><br>
+
+        </div>
+          {% else %}
+          <h1 class="my-4 text-4xl font-bold leading-tight">
+            Subscribe to Blog-A-ware
+          </h1>
+          <p class=" tracking-loose w-full">Get the latest posts delivered right to your inbox</p><br>
+        <form method="post">
+          <p class="leading-normal text-2xl mb-8">
+            <input type="email" placeholder="youremail@example.com" class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none" name="Subscribe">
+          </p>
+         
+          <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" type="submit">
+            Subscribe
+          </button>
+        </form>
+        </div>
+        {% endif %}
+        <!--Right Col-->
+        <div class="w-full md:w-3/5 py-6 text-center">
+          {% load static %}
+          <img class="w-full md:w-4/5 z-50" src="{% static 'images/hero.png' %}" />
+          
+        </div>
+      </div>
+    </div>

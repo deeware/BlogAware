@@ -1,0 +1,54 @@
+
+{% extends 'mainform2.html' %}
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+
+<div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-xl">
+	<h3 width="60%" style="margin-left: 20%;"class="my-4 text-5xl font-bold leading-tight">
+            Write Blog
+          </h3>
+	<table width="80%" style="margin:auto;">
+		<tr>
+			<td style="text-align: right;">{{form.title.label}}: </td>
+			<td>
+				<div class="text-gray-800 leading-normal text-xs m-1">{{form.title}}</div></td>
+		</tr>
+		<tr>
+			<td style="text-align: right;">{{form.category.label}}: </td>
+			<td><div class="text-gray-800 leading-normal text-xs m-1" >{{form.category}}</div></td>
+		</tr>
+		<tr>
+			<td style="text-align: right;">{{form.description.label}}: </td>
+			<td><div class="text-gray-800 leading-normal text-xs m-1">{{form.description}}</div></td>
+		</tr>
+		<tr>
+			<td style="text-align: right;">{{form.image.label}}: </td>
+			<td><div class="text-gray-800 leading-normal text-xs m-1">{{form.image}}</div></td>
+		</tr>
+		<tr>
+			<td style="text-align: right;">{{form.content.label}}: </td>
+			<td><div class="text-gray-800 leading-normal text-xs m-1">{{form.media}}{{form.content}}</div></td>
+		</tr>
+		
+		<tr>
+			<td style="text-align: right;">{{form.references.label}}: </td>
+			<td><div class="text-gray-800 leading-normal text-xs m-1">{{form.references}}</div></td>
+		</tr>
+
+
+		<tr >
+			<td colspan="2">
+          <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1  " type="submit" value="" style="width: 90%; margin-left: 10%;">
+			Save
+			</button>
+		</td>
+	</tr>
+</table>
+</div>
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+<section class="border-b py-32" style="background-color: rgb(255, 230, 255);">
+      <div class="container mx-auto flex flex-wrap  pb-12">
+
+        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          {{Blog.title}}
+        </h1>
+
+        <div class="w-full mb-4">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+          <p class="text-sm md:text-base text-pink-400 font-bold" style="text-align: center;">{{Blog.dateCreated}} <span class="text-gray-900">&nbsp;|&nbsp; </span> {{Blog.category}}</p>
+        </div>
+        <div style="font-size: small;margin: auto;width: 90%;" class="w-full my-2 text-5xl font-bold leading-normalding-tight  text-gray-800">
+
+          <!--Title-->
+
+
+
+          <!--image-->
+          {% include 'post_image.html' %}
+        </div>
+
+
+        <!--Container-->
+        <div class="container max-w-5xl mx-auto -mt-24" style="opacity: 0.9;">
+
+          <div class="mx-0 sm:mx-6">
+
+            <div class="bg-white w-full p-8 md:p-24 text-xl md:text-l text-gray-800 leading-normal " >
+
+              <!--Post Content-->
+
+
+              <!--Lead Para-->
+              <!--p class="text-2xl md:text-3xl mb-5">
+                👋 Hi There!
+
+              </p-->
+
+              <p class="" >
+                <span style="white-space: pre-wrap;"  class="post_content">{{Blog.content | safe}}</span>
+              
+                  <style type="text/css">
+                  ul li {
+                    list-style-type: disc;
+                    }
+                  ol li{
+                    list-style-type: decimal;
+                  }
+                  a:link,a:visited{
+                    color:cornflowerblue;
+                    
+                  }
+                  a:hover{
+                    text-decoration: underline;
+                  }
+                  img,table{
+                    margin: 20px;
+                  }
+                  table,th,td{
+                    border: 1px dotted;
+                    vertical-align: middle;
+                    padding: 5px;
+                  }
+
+                  th{
+                    background-color: lightgray;
+                  }
+                  blockquote {
+                    background: #f9f9f9;
+                    border-left: 5px solid #ccc;
+                    margin: 1.5em 10px;
+                    padding: 0.5em 10px;
+                    quotes: "\201C""\201D""\2018""\2019";
+                  }
+                  blockquote:before {
+                    color: #ccc;
+                    content: open-quote;
+                    font-size: 4em;
+                    line-height: 0.1em;
+                    margin-right: 0.25em;
+                    vertical-align: -0.4em;
+                  }
+                  blockquote:after {
+                    color: #ccc;
+                    content: close-quote;
+                    font-size: 4em;
+                    line-height: 0.1em;
+                    margin-right: 0.25em;
+                    vertical-align: -0.4em;
+                  }
+                  blockquote p {
+                    display: inline;
+                  }
+                  p{
+                    padding:0.5rem 0px;
+                  }
+                  </style>
+              
+              </p>
+              <article class="border-l-4 border-pink-300 italic my-8 pl-8 md:pl-12">Reference<hr>
+                <span class="text-sm" style="white-space: pre-wrap;" >{{Blog.references}}</span>
+              </article>
+            </div>
+
+
+              </div>
+
+            </div>
+</div>
+    </section>
