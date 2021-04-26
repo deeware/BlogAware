@@ -181,7 +181,7 @@ def writeBlog(request):
 		subsObj = set(Subscribers.objects.filter().values_list('email', flat=True))
 
 
-		blogLink = "https://blogaware.pythonanywhere.com/read/"+str(obj.id)
+		blogLink = "https://blogaware.herokuapp.com/read/"+str(obj.id)
 		html_content = render_to_string("email_blog.html",{"ecategory":c,"etitle":b,"eauthor":a.username,"elink":blogLink,"edesc":g})
 		text_content = strip_tags(html_content)
 
